@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Collaborative GIT - Reset</title>
+</head>
+<body>
+    <h1>Reset</h1>
+
+    <h3>Workspace</h3>
+    <ul>
+        <li>Line 1</li>
+        <li>Line 2</li>
+    </ul>
+
+
+    <h3>Steps</h3>
+    <ol>
+        <li>A create branch "reset-A" based on "master"</li>
+        <li>B Create another branch "reset-B" based on "master"</li>
+        <li>A modify line 1 and commit</li>
+        <li>B modify line 1 and commit</li>
+        <li>A modify line 2 but don't commit</li>
+        <li>B modify line 2 but don't commit</li>
+        <li>
+            A run these commands
+            <pre>git merge reset-B</pre>
+            <pre>git reset --merge</pre>
+        </li>
+        <li>
+            B run these commands
+            <pre>git merge rebase-A</pre>
+            <pre>git reset --hard</pre>
+        </li>
+    </ol>
+
+    <h3>Summary</h3>
+    What's the difference? B will lose all of his changes. A will just undo the conflicted merge
+</body>
+</html>

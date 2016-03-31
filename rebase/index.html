@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Collaborative GIT - Rebase</title>
+</head>
+<body>
+    <h1>Rebase</h1>
+
+    <h3>Workspace</h3>
+    <ul>
+        <li>Line 1</li>
+        <li>Line 2</li>
+        <li>Line 3</li>
+        <li>Line 4</li>
+    </ul>
+
+
+    <h3>Steps</h3>
+    <ol>
+        <li>A create branch "rebase-A" based on "master"</li>
+        <li>B Create another branch "rebase-B" based on "master"</li>
+        <li>A modify line 1 and commit</li>
+        <li>B modify line 2 and commit</li>
+        <li>A modify line 3 and commit</li>
+        <li>B modify line 4 and commit</li>
+        <li>
+            A merge "rebase-B" to his branch
+            <pre>git merge rebase-B</pre>
+        </li>
+        <li>
+            B rebase his branch with "rebase-A"
+            <pre>git rebase rebase-A</pre>
+        </li>
+    </ol>
+
+    <h3>Summary</h3>
+    What's the difference? B should see his 2 commits on top while A should see his commit history mixed up with B commit in real time
+</body>
+</html>
