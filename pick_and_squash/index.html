@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Collaborative GIT - Cherry Pick</title>
+</head>
+<body>
+    <h1>Cherry Pick</h1>
+
+    <h3>Workspace</h3>
+    <ul>
+        <li>Line 1</li>
+        <li>Line 2</li>
+        <li>Line 3</li>
+    </ul>
+
+
+    <h3>Steps</h3>
+    <ol>
+        <li>A create branch "cherry-A" based on "master"</li>
+        <li>A modify line 1 and commit</li>
+        <li>B modify line 2 and commit</li>
+        <li>A modify line 3 and commit</li>
+            <pre>git log</pre>
+        <li>
+            A run the following commands
+            <pre>git rebase -i HEAD~3</pre>
+        </li>
+        <li>
+            In the editor, change the last 2 "pick" to "squash". Save and exit
+            <pre>pick <HEAD></pre>
+            <pre>squash <HEAD></pre>
+            <pre>squash <HEAD></pre>
+        </li>
+        <li>
+            There will be a summary of the commits so far, this can be replaced as a new commit message. Save and exit
+        </li>
+        <li>
+            Check the git log
+            <pre>git log</pre>
+        </li>
+    </ol>
+
+    <h3>Summary</h3>
+    What's the difference? The second git lock will squash all three commits into one
+</body>
+</html>
